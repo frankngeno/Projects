@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="hibernate-tutorial:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/hibernate_tutorial_jar</output-path>
-    <root id="archive" name="hibernate-tutorial.jar">
-      <element id="module-output" name="hibernate-tutorial" />
-    </root>
-  </artifact>
-</component>

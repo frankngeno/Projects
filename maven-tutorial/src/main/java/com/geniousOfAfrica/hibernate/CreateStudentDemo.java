@@ -1,4 +1,4 @@
-package com.geniousOfAfrica;
+package com.geniousOfAfrica.hibernate;
 
 import com.geniousOfAfrica.entity.Student;
 import org.hibernate.Session;
