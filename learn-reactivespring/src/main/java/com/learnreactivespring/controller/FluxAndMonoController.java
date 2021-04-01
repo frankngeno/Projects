@@ -9,7 +9,6 @@ import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 
-
 //non blocking API
 @RestController
 public class FluxAndMonoController {
