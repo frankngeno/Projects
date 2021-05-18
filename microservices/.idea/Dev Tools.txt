@@ -1,0 +1,38 @@
+
+Generate RSA keys
+# Change directory into your .ssh directory
+cd ~\.ssh
+
+# Generate new RSA key and public key files
+ssh-keygen -t rsa -b 4096 -C "<your email address>"
+
+# Copy public key to clipboard
+cat .\id_rsa.pub | clip
+
+Add Environmental Variables
+
+DEPLOYMENT_ENVIRONMENT=dev
+SPRING_CLOUD_CONFIG_LABEL=develop
+SPRING_CLOUD_CONFIG_URI=http://nxpdev.corp.nexient.com:8888
+SPRING_CLOUD_CONFIG_USERNAME=admin
+SPRING_CLOUD_CONFIG_PASSWORD=password
+
+Clone and branch code
+# Go to your working directory.  For me it is in C:\Users\kskronek\Code\Nexient\Internal projects\APIs
+$ cd ~/Code/Nexient/Internal\ projects/APIs/
+
+# Goto the project repo in your browser: https://repo.corp.nexient.com/nexient/nexport/nexport-apis/<example-api>
+# Copy the **Clone with SSH** link by clicking the **[Clone]** button
+# Clone the project
+$ git clone git@repo.corp.nexient.com:nexient/nexport/nexport-apis/<example-api>.git
+
+# Change directories
+$ cd <example-api>/
+
+# Create a new working branch and check it out
+# Branch name should start with the main story name, i.e. NEXPORT-1859_implement_WebMvcConfigurer
+$ git checkout -b <your_working_branch>
+
+# Please commit your code regularly
+# You will need to set your upstream(remote) branch to be the same as it is locally on your first push
+$ git push --set-upstream origin <your_working_branch>
