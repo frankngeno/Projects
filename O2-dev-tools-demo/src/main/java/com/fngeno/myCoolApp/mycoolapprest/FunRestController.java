@@ -9,12 +9,17 @@ import java.time.LocalDateTime;
 public class FunRestController {
     @GetMapping("/")
     public String sayHello(){
-        return "Hello world! Time on server is " + LocalDateTime.now();
+        return "Hello world! Time on server is "
+                + LocalDateTime.now();
+    }
+    @GetMapping("/workout")
+    public String dailyWorkout(){
+        return "run a hard 5k!";
     }
 
-//    @GetMapping("/")
-//    public String sayHello(){
-//        return "Hello world! Time on server is " + LocalDateTime.now();
-//    }
+    @GetMapping("/fortune")
+    public String dailyFortune(){
+        return "Today is your Lucky Day!";
+    }
 
 }

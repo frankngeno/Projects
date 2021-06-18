@@ -1,4 +1,4 @@
-package com.fngeno.department.entity;
+package com.fngeno.departmentservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,4 +18,6 @@ public class Department {
     private String departmentName;
     private  String departmentAddress;
     private  String departmentCode;
+    private String email;
+
 }

@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.fngeno'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '1.8'
 
 configurations {
 	compileOnly {
@@ -20,29 +20,21 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-	implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
-
-	compileOnly 'org.projectlombok:lombok'
-
+	annotationProcessor 'org.immutables:value:2.8.2'
+	compileOnly 'org.immutables:value:2.8.2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.projectlombok:lombok'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.0-M1'
-	testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha1'
 
-
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
 
 
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.2'
 	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.12.2'
 	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.12.2'
 	implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-parameter-names', version: '2.12.2'
-
-
-
-
 
 }
 

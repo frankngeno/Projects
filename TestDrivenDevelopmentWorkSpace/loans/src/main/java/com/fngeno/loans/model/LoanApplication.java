@@ -1,11 +1,18 @@
-package com.fngeno.loans;
+package com.fngeno.loans.model;
 
+
+import org.springframework.web.client.RestTemplate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
 public class LoanApplication {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 	private String name;
 	private int principal;
@@ -23,7 +30,8 @@ public class LoanApplication {
 	}
 
 	public BigDecimal getInterestRate() {
-		return interestRate;
+		RestTemplate restTemplate = new RestTemplate();
+		return restTemplate.getForObject("http://loans.virtualpairprogrammers.com/getInterestRate", BigDecimal.class);
 	}
 
 	public void setInterestRate(BigDecimal interestRate) {

@@ -1,4 +1,6 @@
-public class ForLoops {
+package forloops;
+
+public class PrintArraysElements {
 
     public static void main(String[] args) {
         //create an array
@@ -8,6 +10,10 @@ public class ForLoops {
         for(int num: numbers){
             System.out.println(num);
         }
+
+
+
+
 
     }
 }

@@ -1,8 +1,9 @@
-package com.fngeno.department.service;
+package com.fngeno.departmentservice.service;
 
 
-import com.fngeno.department.entity.Department;
-import com.fngeno.department.repository.DepartmentRepository;
+
+import com.fngeno.departmentservice.entity.Department;
+import com.fngeno.departmentservice.repository.DepartmentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

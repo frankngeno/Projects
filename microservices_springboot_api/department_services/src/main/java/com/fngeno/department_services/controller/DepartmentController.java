@@ -2,30 +2,33 @@ package com.fngeno.department_services.controller;
 
 
 import com.fngeno.department_services.entity.Department;
-import com.fngeno.department_services.services.DeptServices;
+import com.fngeno.department_services.repository.DepartmentRepository;
+import com.fngeno.department_services.services.DepartmentServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+
 @RestController
 @RequestMapping("/departments")
 @Slf4j
-public class DeptController {
+public class DepartmentController {
     @Autowired
-    private DeptServices deptServices;
+    private DepartmentRepository departmentRepository;
+
 
     @PostMapping("/")
     public Department saveDepartment (@RequestBody Department department){
        log.info("Inside saveDepartment method of departmentController ");
-        return deptServices.save(department);
+        return departmentRepository.saveDepartment(department);
     }
 
-    @GetMapping("{id}")
-    public Optional<Department> findDepartmentById(@RequestParam Long departmentId){
+    @GetMapping("/{id}")
+    public Department findDepartmentById (@PathVariable("id") Long departmentId){
         log.info("Inside findDepartmentById method of Controller ");
-        return deptServices.findDepartmentById(departmentId);
+        return departmentRepository.findDepartmentById(departmentId);
     }
 
 

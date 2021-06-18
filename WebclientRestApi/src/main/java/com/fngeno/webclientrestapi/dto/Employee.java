@@ -1,17 +1,23 @@
-package com.fngeno.webclientdemo.dto;
+package com.fngeno.webclientrestapi.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.immutables.value.Value;
 import reactor.util.annotation.Nullable;
 
-
+@Value.Immutable
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonDeserialize(builder = ImmutableEmployee.Builder.class)
 public interface Employee {
     @JsonProperty("age")
-    @Nullable
-    int getAge();
+    Integer getAge();
 
     @JsonProperty("id")
-    @Nullable
     Integer getId();
 
     @JsonProperty("firstName")

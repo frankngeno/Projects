@@ -1,4 +1,4 @@
-package com.fngeno.webclientdemo.constant;
+package com.fngeno.webclientrestapi.constant;
 
 public class EmployeeConstants {
     public static final String GET_ALL_EMPLOYEES_V1 = "/v1/allEmployees";
